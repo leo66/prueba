@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Registro</title> 
+    <link rel="stylesheet" href="assets/css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mobile.theme-1.4.5.min.css" />
+    <script src="assets/js/jquery-1.7.2.min.js"></script>
+    <script src="assets/js/jquery.mobile-1.4.5.min.js"></script>
+   
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.js"></script>
+    <script src="js/messages_es.js"></script> 
+</head> 
+ 
+<body> 
+ 
+<div id="pagina" data-role="page">
+ 
+    <div data-role="header">
+        <h1>ArriendosYa!</h1>
+        <a href="index.php">Inicio</a>
+    </div><!-- /header -->
+ 
+    <div data-role="content"> 
+        <form action="guardar_rg.php" method="post" id="frmregistro" name="frmregistro" novalidate="novalidate" >
+        <title>Datos de registro</title>
+       
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text"   name="nombre" id="nombre">
+        <div class="clear"> </div>
+        <label for="apellido">Apellido:</label>
+        <input type="text"  name="apellido" id="apellido">
+        <div class="clear"> </div>
+
+        <label for="correo">Correo:</label>
+        <input type="email"  name="correo" id="correo">
+        <div class="clear"> </div>
+
+        <label for="clave">Contraseña:</label>
+        <input type="password"  name="clave" id="clave">
+        <div class="clear"> </div>
+        <label for="txt_clave2">Confirmar Contraseña:</label>
+        <input type="password"  name="txt_clave2" id="txt_clave2">
+       
+       
+    
+         
+        <input class="enviar" type="submit"  value="Registrar">
+             </form>
+
+    <div class="clear"> </div>
+    </div><!-- /content -->
+     
+    <div data-role="footer">
+        <h4>Contacto</h4>
+    </div><!-- /footer -->
+     
+</div><!-- /page -->
+
+<script>
+
+$("#frmregistro").validate({
+    rules: {
+      nombre: {
+        required: true,
+        lettersonly: true
+      },
+        apellido: {
+        required: true,
+        lettersonly: true
+      },
+        correo: {
+        required: true,
+        email:true
+      },
+        clave: {
+        required: true
+          
+      },
+        txt_clave2: {
+        required: true,
+        equalTo: clave
+      },
+ 
+     
+    },
+    messages: {
+        nombre:{
+        lettersonly:"Introduce solo letras"
+      },
+        apellido:{
+        lettersonly:"Introduce solo letras"
+      },
+        correo: {
+        email:"Introduce direcion de correo valida"
+      },
+        clave:{
+      },
+        txt_clave2:{
+        required:"Repite la clave"     
+      }
+    },
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+
+
+</script>
+
+</body>
+</html>

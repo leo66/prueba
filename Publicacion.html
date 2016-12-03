@@ -1,0 +1,122 @@
+<?php
+header("location:publicacion.html");
+?>
+<!DOCTYPE html> 
+<html>
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Login</title> 
+    <link rel="stylesheet" href="assets/css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mobile.theme-1.4.5.min.css" />
+    <script src="assets/js/jquery-1.7.2.min.js"></script>
+    <script src="assets/js/jquery.mobile-1.4.5.min.js"></script>
+
+     <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.js"></script>
+    <script src="js/messages_es.js"></script> 
+</head> 
+ 
+<body> 
+ 
+<div id="pagina" data-role="page">
+ 
+    <div data-role="header">
+        <h1>Bienvenido "Nombre de usuario"!</h1>
+        <a href="index.php">Inicio</a>
+    </div><!-- /header -->
+ 
+    <div data-role="content"> 
+        <form enctype="multipart/form-data" action="Guardar_pb.php" method="post" novalidate="novalidate" id="frmpublicacion">
+        <title>Datos de Arriendo</title>
+        
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" id="titulo">
+       <label for="pais">País:</label>
+        <select id="pais" name="pais" data-native-menu="false">
+        <option value="1">Chile</option></select>
+         <label for="ciudada">Ciudad:</label>
+         
+         <select id="ciudad" name="ciudad" data-native-menu="false">
+        <option value="1">Pucon</option></select>
+        
+         <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion" id="direccion">
+        
+       <label for="titulo">Número Habitación:</label>
+        <input type="range" min="1" max="20" name="nrohabitacion" id="nrohabitacion">
+        
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion"></textarea>
+        
+         <label for="valor">Valor:</label>
+        <input type="text" name="valor" id="valor">
+        <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+        <label for="foto">Imágenes</label>
+        <input type="file" id="foto" name="foto">
+        
+         <title>Contacto de arrendatario</title>
+         <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" id="telefono">
+         
+        <input class="enviar" type="submit" value="Publicar">
+             </form>
+    </div><!-- /content -->
+     
+    <div data-role="footer">
+        <h4>Contacto</h4>
+    </div><!-- /footer -->
+     
+</div><!-- /page -->
+ 
+ <script>
+
+$("#frmpublicacion").validate({
+    rules: {
+      titulo: {
+        required: true
+      },
+        direccion: {
+        required: true
+      },
+        nrohabitacion: {
+        required: true
+      },
+        descripcion: {
+        required: true
+      },
+        valor: {
+        required: true,
+        number: true
+      },
+      telefono: {
+        required: true,
+        number:true,
+        minlength: 9,
+        maxlength: 9
+      },
+      btn_enviar:{
+        required:true
+      },
+ 
+     
+    },
+    messages: {
+        
+        
+        valor:{
+        required:"Ingresa un valor"     
+      }
+    },
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+
+
+</script>
+</body>
+</html>
+

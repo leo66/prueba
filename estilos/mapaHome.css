@@ -1,0 +1,10 @@
+#map-home{
+					height:100%;
+					width:100%;
+					padding:0;
+					position:absolute !important;
+					top:90px;
+					righ:0px;
+					bottom:40px !important;
+					left:0px !important;
+				}

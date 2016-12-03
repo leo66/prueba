@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html>
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+    <title>Login</title> 
+    <link rel="stylesheet" href="assets/css/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="assets/css/jquery.mobile.theme-1.4.5.min.css" />
+    <script src="assets/js/jquery-1.7.2.min.js"></script>
+    <script src="assets/js/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.js"></script>
+    <script src="js/messages_es.js"></script> 
+</head> 
+ 
+<body> 
+ 
+<div id="pagina" data-role="page">
+ 
+    <div data-role="header">
+        <h1>ArriendoYa!</h1>
+        <a href="index.php">Inicio</a>
+    </div><!-- /header -->
+ 
+    <div data-role="content"> 
+         
+        <form id="frmlogin" name="frmlogin" method="post" action="login.php" novalidate="novalidate">
+        
+            <label for="txt_usuario">Usuario:</label>
+            <input type="text" id="txtusuario" name="txtusuario">
+            <div class="clear"> </div>
+            <label for="txt_clave">Clave:</label>
+            <input type="password" id="txtclave" name="txtclave">
+
+            <input class="enviar" type="submit" value="Enviar">
+            
+        </form>
+       <div class="clear"> </div>
+        
+             
+    </div><!-- /content -->
+     
+    <div data-role="footer">
+        <h4>Contacto</h4>
+    </div><!-- /footer -->
+     
+</div><!-- /page -->
+ <script>
+
+$("#frmlogin").validate({
+    rules: {
+      txtusuario: {
+        required: true,
+        email: true
+      },
+        txtclave: {
+        required: true
+      },
+
+    },
+    messages: {
+        txtusuario:{
+        email:"Introduce una dirección correo valido"
+      },
+    },
+    submitHandler: function(form) {
+      form.submit();
+    }
+  });
+
+
+</script>
+</body>
+</html>
