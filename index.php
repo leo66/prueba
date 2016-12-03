@@ -11,7 +11,7 @@
     <script src="assets/js/jquery-1.7.2.min.js"></script>
     <script src="assets/js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCAV0iw8JlsZjE-ZRPiwbX9SxvpKSJNyfY"></script>
-    
+    <script src="phonegap.js"></script>
  <script>
         	$( document ).on( "pageinit", "#paginaMapa", function(e,data) {
 				
