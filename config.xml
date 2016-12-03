@@ -1,0 +1,11 @@
+ <widget id="com.example.hello" version="0.0.1">
+        <name>arriendo</name>
+        <description>
+            A sample Apache Cordova application that responds to the deviceready event.
+        </description>
+        <author email="leo6gatica@gmail.com" href="http://cordova.io">
+            Apache Cordova Team
+        </author>
+        <content src="index.html" />
+        <access origin="*" />
+    </widget>
